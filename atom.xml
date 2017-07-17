@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pineapple1996.github.io/"/>
-  <updated>2017-07-13T09:52:33.568Z</updated>
+  <updated>2017-07-16T14:07:37.666Z</updated>
   <id>https://pineapple1996.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://pineapple1996.github.io/2017/07/13/%E6%88%91%E5%BB%BA%E7%AB%8B%E4%BA%86%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/"/>
     <id>https://pineapple1996.github.io/2017/07/13/我建立了自己的个人博客网站/</id>
     <published>2017-07-13T09:21:58.000Z</published>
-    <updated>2017-07-13T09:52:33.568Z</updated>
+    <updated>2017-07-16T14:07:37.666Z</updated>
     
     <content type="html"><![CDATA[<p>今后，我将在个人网站发布自己的学习项目和个人学习笔记，谢谢大家常来批评指正。哈哈</p>
 <blockquote>
@@ -41,6 +41,12 @@
     
     </summary>
     
+      <category term="搭建博客" scheme="https://pineapple1996.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="npm" scheme="https://pineapple1996.github.io/tags/npm/"/>
+    
+      <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
     
   </entry>
   
