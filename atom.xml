@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pineapple1996.github.io/"/>
-  <updated>2017-07-16T14:07:37.666Z</updated>
+  <updated>2017-07-25T06:47:46.500Z</updated>
   <id>https://pineapple1996.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo+github搭建个人博客</title>
+    <link href="https://pineapple1996.github.io/2017/07/25/hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://pineapple1996.github.io/2017/07/25/hexo-github搭建个人博客/</id>
+    <published>2017-07-25T05:55:17.000Z</published>
+    <updated>2017-07-25T06:47:46.500Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h1><p>过完大三的一年，上完了大学所有要在课堂上的课。最近有了大量的时间来投入个人的学习和找工作，所以想要开始写博客了，一来为了整理自己学习到的知识，二来也是为了求职升学所用。而且在我的博客中还可以分享一些自己有趣的小事。<br>开始在网上看了很多的博客搭建，开始在知乎上看到用WorldPress，我也尝试自己去买了个主机（在这里向大家推荐这个VPS，很便宜<a href="http://www.onehost.cn/" target="_blank" rel="external">一主机</a>），装了个WP搭建的博客。不过在后面的寻找中无意间看到了HEXO+github搭建的方法，框架很好，关键是免费（嘿嘿~）。<br>顺便将搭建过程记录下来，成为我博客第一篇正式技术博文。为我博客文章充充数，哈哈~<br>我的博客地址：<a href="http://jiangmoran.top" target="_blank" rel="external">jiangmoran.top</a>,欢迎大家指导学习。</p>
+<h1 id="2、准备"><a href="#2、准备" class="headerlink" title="2、准备"></a>2、准备</h1><p>其实下面的准备你只需要安装就行了，按着博文做下去，如果你有兴趣可以看看全部推荐的东西</p>
+<h2 id="2-1下载安装git"><a href="#2-1下载安装git" class="headerlink" title="2.1下载安装git"></a>2.1下载安装git</h2><p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">git</a>是一个分布式的版本控制工具，也是目前最流行的。它可以帮助你管理本地仓库，并且把本地的项目托管到远端的Github上。也就是你需要建立一个仓库来放你的博客网站项目，并部署到Github。<br>这里推荐<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a>，或者<a href="http://www.maiziedu.com/course/782-11329/" target="_blank" rel="external">视频版git教程</a>，不需要看完，只需要看安装的部分，几分钟就搞定。如果有什么问题可以看看视频教程，讲得很清楚。</p>
+<h2 id="2-2下载安装Node-js"><a href="#2-2下载安装Node-js" class="headerlink" title="2.2下载安装Node.js"></a>2.2下载安装Node.js</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>是一个Javascript运行环境（runtime）。实际上它是对Google V8引擎进行了封装。Node.js主要用于安装hexo，npm开头的命令都依赖于Node.js。如果出现以下提示则代表你的Node.js没有安装或者还未生效，如果已经安装了则重启电脑，如果没安装则安装再重启电脑。<br>    <pre><code>bash: nmp: command not found</code></pre></p>
+<h2 id="2-3下载安装Hexo"><a href="#2-3下载安装Hexo" class="headerlink" title="2.3下载安装Hexo"></a>2.3下载安装Hexo</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1、前言&quot;&gt;&lt;a href=&quot;#1、前言&quot; class=&quot;headerlink&quot; title=&quot;1、前言&quot;&gt;&lt;/a&gt;1、前言&lt;/h1&gt;&lt;p&gt;过完大三的一年，上完了大学所有要在课堂上的课。最近有了大量的时间来投入个人的学习和找工作，所以想要开始写博客了，一来为了整理
+    
+    </summary>
+    
+      <category term="搭建博客" scheme="https://pineapple1996.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
+    
+      <category term="git" scheme="https://pineapple1996.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://pineapple1996.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>我建立了自己的个人博客网站</title>
