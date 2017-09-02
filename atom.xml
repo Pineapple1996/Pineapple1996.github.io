@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pineapple1996.github.io/"/>
-  <updated>2017-09-02T07:25:10.909Z</updated>
+  <updated>2017-09-02T07:44:11.500Z</updated>
   <id>https://pineapple1996.github.io/</id>
   
   <author>
@@ -20,61 +20,31 @@
     <link href="https://pineapple1996.github.io/2017/07/25/hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>https://pineapple1996.github.io/2017/07/25/hexo-github搭建个人博客/</id>
     <published>2017-07-25T05:55:17.000Z</published>
-    <updated>2017-09-02T07:25:10.909Z</updated>
+    <updated>2017-09-02T07:44:11.500Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>过完大三的一年，上完了大学所有要在课堂上的课。最近有了大量的时间来投入个人的学习和找工作，所以想要开始写博客了，一来为了整理自己学习到的知识，二来也是为了求职升学所用。而且在我的博客中还可以分享一些自己有趣的小事。<br>开始在网上看了很多的博客搭建，开始在知乎上看到用WorldPress，我也尝试自己去买了个主机（在这里向大家推荐这个VPS，很便宜<a href="http://www.onehost.cn/" target="_blank" rel="external">一主机</a>），装了个WP搭建的博客。不过在后面的寻找中无意间看到了HEXO+github搭建的方法，框架很好，关键是免费（嘿嘿~）。<br>顺便将搭建过程记录下来，成为我博客第一篇正式技术博文。为我博客文章充充数，哈哈~<br>我的博客地址：<a href="http://jiangmoran.top" target="_blank" rel="external">jiangmoran.top</a>,欢迎大家指导学习。</p>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>其实下面的准备你只需要安装就行了，按着博文做下去，如果你有兴趣可以看看全部推荐的东西</p>
 <h2 id="下载安装git"><a href="#下载安装git" class="headerlink" title="下载安装git"></a>下载安装git</h2><p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">git</a>是一个分布式的版本控制工具，也是目前最流行的。它可以帮助你管理本地仓库，并且把本地的项目托管到远端的Github上。也就是你需要建立一个仓库来放你的博客网站项目，并部署到Github。<br>这里推荐<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的Git教程</a>，或者<a href="http://www.maiziedu.com/course/782-11329/" target="_blank" rel="external">视频版git教程</a>，不需要看完，只需要看安装的部分，几分钟就搞定。如果有什么问题可以看看视频教程，讲得很清楚。</p>
 <h2 id="下载安装Node-js"><a href="#下载安装Node-js" class="headerlink" title="下载安装Node.js"></a>下载安装Node.js</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>是一个Javascript运行环境（runtime）。实际上它是对Google V8引擎进行了封装。Node.js主要用于安装hexo，npm开头的命令都依赖于Node.js。如果出现以下提示则代表你的Node.js没有安装或者还未生效，如果已经安装了则重启电脑，如果没安装则安装再重启电脑。<br>    <pre>bash: nmp: command not found</pre></p>
 <h2 id="下载安装Hexo"><a href="#下载安装Hexo" class="headerlink" title="下载安装Hexo"></a>下载安装Hexo</h2><p>利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择Git bash）<br>输入下面代码</p>
-<pre>npm install -g hexo</pre>
-安装hexo-deployer-git（把博客部署到git上的
-<pre>npm install hexo-deployer-git --save</pre>
-缺少第二步，在后面的步骤会出现以下错误信息：
-<pre>ERROR Deployer not found : github</pre>
-到这里所有需要下载安装的都安装完了。
-# 开始搭建博客 #
-## 初步搭建 ##
-创建博客放置的文件夹，可以是你比较喜欢的位置，比如<code>D:\blog</code>
-然后<pre>cd 你的文件夹路径</pre>
-执行以下指令<code>在D:\blog内点击鼠标右键，选择Git bash</code>，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。<pre>hexo init</pre>
-看到以下信息，说明你的博客已经初步搭建好了。<pre>INFO  Start blogging with Hexo!</pre>
-安装依赖包<pre>npm install</pre>只要没看到错误提示就是成功了
-## 验收一下初步成果 ##
-现在我们已经搭建起本地的hexo博客了，执行以下命令<code>在D:\blog</code>，然后到浏览器输入<code>localhost:4000</code>看看。
-1.生成静态文件
-<pre>hexo g</pre>
-2.启动服务器，进行本地预览（也就是只有本机能够访问博客）
-<pre>hexo s</pre>![](https://i.imgur.com/Wb7rDHX.png)
-看到最后一句话，说明hexo已经运行在本地端口4000了，我们可以用浏览器访问这个地址进行预览。
-你搭建的一个博客雏形已经出现了。大概是这个样子
-![](https://i.imgur.com/puBRtVw.png)
-# 将本地的博客部署到GitHub #
-## 在Github创建仓库 ##
-1.注册、登录这里我们就不多讲了，小伙伴们可以点击[这里](http://https://github.com/)，进入官网进行注册。牢记用户名、邮箱和密码，以后都会要用到。
-2.创建新的仓库
-![](https://i.imgur.com/vLnhdUc.png)
-登录账号后，在Github页面的右上方选择New repository进行仓库的创建。
-![](https://i.imgur.com/2HR3Aj3.png)
-![](https://i.imgur.com/s7pwXZF.png)
-在仓库名字输入框中输入：
-<pre>Github昵称.github.io</pre>
-然后点击Create repository即可。
-3.第一次使用Github的同学需要配置SSH key，具体SSH key是什么，有兴趣的同学可以Google或者百度，我们这里配置的原因是为了以后部署博客到Github不用再输入密码，你可以简单理解为你的主机获得了进入Github的钥匙。
-
-点击右上角自己的头像，选择设置选项。
-![](https://i.imgur.com/18HS26E.png)
-这里的key name可以任意命名，建议可以命名为“主机+系统”以便以后唤醒你的记忆。知道当初配置它是给哪台主机的哪个系统的。
-Key值需要生成，通过在Git Bash或者Git Shell执行以下代码：
-<pre>ssh-keygen -t rsa -C "your_email@youremail.com"</pre>
-之后会要求确认路径和输入密码，我们这使用默认的一路回车就行，成功的话会在C:\Users\Administrator下生成.ssh文件夹，进入该文件夹，以文本的形式打开id_rsa.pub，复制里面的key，即复制文件的全部内容。如果你在这边只看见2个id_rsa文件，没看到id_rsa.pub，应该是你把后缀名隐藏了，可以设置显示后缀，或者直接把两个文件都以文本的形式打开，内容短的并且以ssh-rsa开头的即为所需的SSH key。
-4.在Bash或Shell中执行以下命令验证是否成功
-<pre>ssh -T git@github.com</pre>
-如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated， but GitHub does not provide shell access ，这就表示已成功连上github。
-## 配置站点文件，部署博客到Github ##
-接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。
-<pre>git config --global user.name "你的名字"  
-git config --global user.email "你的邮箱"</pre>]]></content>
+<p><pre>npm install -g hexo</pre><br>安装hexo-deployer-git（把博客部署到git上的</p>
+<p><pre>npm install hexo-deployer-git –save</pre><br>缺少第二步，在后面的步骤会出现以下错误信息：</p>
+<p><pre>ERROR Deployer not found : github</pre><br>到这里所有需要下载安装的都安装完了。</p>
+<h1 id="开始搭建博客"><a href="#开始搭建博客" class="headerlink" title="开始搭建博客"></a>开始搭建博客</h1><h2 id="初步搭建"><a href="#初步搭建" class="headerlink" title="初步搭建"></a>初步搭建</h2><p>创建博客放置的文件夹，可以是你比较喜欢的位置，比如<code>D:\blog</code><br>然后<pre>cd 你的文件夹路径</pre><br>执行以下指令<code>在D:\blog内点击鼠标右键，选择Git bash</code>，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。<pre>hexo init</pre><br>看到以下信息，说明你的博客已经初步搭建好了。<pre>INFO  Start blogging with Hexo!</pre><br>安装依赖包<pre>npm install</pre>只要没看到错误提示就是成功了</p>
+<h2 id="验收一下初步成果"><a href="#验收一下初步成果" class="headerlink" title="验收一下初步成果"></a>验收一下初步成果</h2><p>现在我们已经搭建起本地的hexo博客了，执行以下命令<code>在D:\blog</code>，然后到浏览器输入<code>localhost:4000</code>看看。<br>1.生成静态文件</p>
+<p><pre>hexo g</pre><br>2.启动服务器，进行本地预览（也就是只有本机能够访问博客）</p>
+<p><pre>hexo s</pre><img src="https://i.imgur.com/Wb7rDHX.png" alt=""><br>看到最后一句话，说明hexo已经运行在本地端口4000了，我们可以用浏览器访问这个地址进行预览。<br>你搭建的一个博客雏形已经出现了。大概是这个样子<br><img src="https://i.imgur.com/puBRtVw.png" alt=""></p>
+<h1 id="将本地的博客部署到GitHub"><a href="#将本地的博客部署到GitHub" class="headerlink" title="将本地的博客部署到GitHub"></a>将本地的博客部署到GitHub</h1><h2 id="在Github创建仓库"><a href="#在Github创建仓库" class="headerlink" title="在Github创建仓库"></a>在Github创建仓库</h2><p>1.注册、登录这里我们就不多讲了，小伙伴们可以点击<a href="http://https://github.com/" target="_blank" rel="external">这里</a>，进入官网进行注册。牢记用户名、邮箱和密码，以后都会要用到。<br>2.创建新的仓库<br><img src="https://i.imgur.com/vLnhdUc.png" alt=""><br>登录账号后，在Github页面的右上方选择New repository进行仓库的创建。<br><img src="https://i.imgur.com/2HR3Aj3.png" alt=""><br><img src="https://i.imgur.com/s7pwXZF.png" alt=""><br>在仓库名字输入框中输入：</p>
+<p><pre>Github昵称.github.io</pre><br>然后点击Create repository即可。<br>3.第一次使用Github的同学需要配置SSH key，具体SSH key是什么，有兴趣的同学可以Google或者百度，我们这里配置的原因是为了以后部署博客到Github不用再输入密码，你可以简单理解为你的主机获得了进入Github的钥匙。</p>
+<p>点击右上角自己的头像，选择设置选项。<br><img src="https://i.imgur.com/18HS26E.png" alt=""><br>这里的key name可以任意命名，建议可以命名为“主机+系统”以便以后唤醒你的记忆。知道当初配置它是给哪台主机的哪个系统的。<br>Key值需要生成，通过在Git Bash或者Git Shell执行以下代码：</p>
+<p><pre>ssh-keygen -t rsa -C “your_email@youremail.com”</pre><br>之后会要求确认路径和输入密码，我们这使用默认的一路回车就行，成功的话会在C:\Users\Administrator下生成.ssh文件夹，进入该文件夹，以文本的形式打开id_rsa.pub，复制里面的key，即复制文件的全部内容。如果你在这边只看见2个id_rsa文件，没看到id_rsa.pub，应该是你把后缀名隐藏了，可以设置显示后缀，或者直接把两个文件都以文本的形式打开，内容短的并且以ssh-rsa开头的即为所需的SSH key。<br>4.在Bash或Shell中执行以下命令验证是否成功</p>
+<p><pre>ssh -T git@github.com</pre><br>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated， but GitHub does not provide shell access ，这就表示已成功连上github。</p>
+<h2 id="配置站点文件，部署博客到Github"><a href="#配置站点文件，部署博客到Github" class="headerlink" title="配置站点文件，部署博客到Github"></a>配置站点文件，部署博客到Github</h2><p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
+<p><pre>git config –global user.name “你的名字”<br>git config –global user.email “你的邮箱”</pre><br>2.编辑你的博客文件夹下的的_config.yml配置文件，建议使用Notepad++或者Sublime。在配置文件底部，配置如下信息。其中“Pineapple1996”是我的用户名，你需要换成你的用户名。</p>
+<p><pre>deploy:<br>  type: git<br>  repository: <a href="https://github.com/Pineapple1996/Pineapple1996.github.io.git" target="_blank" rel="external">https://github.com/Pineapple1996/Pineapple1996.github.io.git</a><br>  branch: master</pre><br><code>注意：配置文件中的冒号后必须有一个空格，且这个冒号不能是中文冒号，</code></p>
+<p>执行以下命令部署到Github上。如果你是第一次使用Github或者是已经使用过，但没有配置过SSH，则可能需要配置一下</p>
+<p><pre>$ hexo g<br>$ hexo d</pre><br>我们通过用浏览器访问username.github.io.git也同样访问到了博客，注意，这里已经不是本地访问了。我们的博客成功发布了！快用小伙伴的电脑看一看吧。</p>
+]]></content>
     
     <summary type="html">
     
