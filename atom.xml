@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pineapple1996.github.io/"/>
-  <updated>2017-09-02T07:16:31.730Z</updated>
+  <updated>2017-09-02T07:25:10.909Z</updated>
   <id>https://pineapple1996.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://pineapple1996.github.io/2017/07/25/hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>https://pineapple1996.github.io/2017/07/25/hexo-github搭建个人博客/</id>
     <published>2017-07-25T05:55:17.000Z</published>
-    <updated>2017-09-02T07:16:31.730Z</updated>
+    <updated>2017-09-02T07:25:10.909Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>过完大三的一年，上完了大学所有要在课堂上的课。最近有了大量的时间来投入个人的学习和找工作，所以想要开始写博客了，一来为了整理自己学习到的知识，二来也是为了求职升学所用。而且在我的博客中还可以分享一些自己有趣的小事。<br>开始在网上看了很多的博客搭建，开始在知乎上看到用WorldPress，我也尝试自己去买了个主机（在这里向大家推荐这个VPS，很便宜<a href="http://www.onehost.cn/" target="_blank" rel="external">一主机</a>），装了个WP搭建的博客。不过在后面的寻找中无意间看到了HEXO+github搭建的方法，框架很好，关键是免费（嘿嘿~）。<br>顺便将搭建过程记录下来，成为我博客第一篇正式技术博文。为我博客文章充充数，哈哈~<br>我的博客地址：<a href="http://jiangmoran.top" target="_blank" rel="external">jiangmoran.top</a>,欢迎大家指导学习。</p>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>其实下面的准备你只需要安装就行了，按着博文做下去，如果你有兴趣可以看看全部推荐的东西</p>
@@ -47,13 +47,15 @@
 2.启动服务器，进行本地预览（也就是只有本机能够访问博客）
 <pre>hexo s</pre>![](https://i.imgur.com/Wb7rDHX.png)
 看到最后一句话，说明hexo已经运行在本地端口4000了，我们可以用浏览器访问这个地址进行预览。
-你搭建的一个博客雏形已经出现了。大概是这个样子![](https://i.imgur.com/puBRtVw.png)
+你搭建的一个博客雏形已经出现了。大概是这个样子
+![](https://i.imgur.com/puBRtVw.png)
 # 将本地的博客部署到GitHub #
 ## 在Github创建仓库 ##
 1.注册、登录这里我们就不多讲了，小伙伴们可以点击[这里](http://https://github.com/)，进入官网进行注册。牢记用户名、邮箱和密码，以后都会要用到。
 2.创建新的仓库
 ![](https://i.imgur.com/vLnhdUc.png)
-登录账号后，在Github页面的右上方选择New repository进行仓库的创建。![](https://i.imgur.com/6llTwyU.png)
+登录账号后，在Github页面的右上方选择New repository进行仓库的创建。
+![](https://i.imgur.com/2HR3Aj3.png)
 ![](https://i.imgur.com/s7pwXZF.png)
 在仓库名字输入框中输入：
 <pre>Github昵称.github.io</pre>
@@ -120,9 +122,9 @@ git config --global user.email "你的邮箱"</pre>]]></content>
       <category term="搭建博客" scheme="https://pineapple1996.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="npm" scheme="https://pineapple1996.github.io/tags/npm/"/>
-    
       <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
+    
+      <category term="npm" scheme="https://pineapple1996.github.io/tags/npm/"/>
     
   </entry>
   
