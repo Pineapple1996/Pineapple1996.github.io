@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pineapple1996.github.io/"/>
-  <updated>2017-09-02T07:44:11.500Z</updated>
+  <updated>2017-09-13T14:20:55.507Z</updated>
   <id>https://pineapple1996.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>50条常用Linux命令</title>
+    <link href="https://pineapple1996.github.io/2017/09/13/50%E6%9D%A1%E5%B8%B8%E7%94%A8Linux%E5%91%BD%E4%BB%A4/"/>
+    <id>https://pineapple1996.github.io/2017/09/13/50条常用Linux命令/</id>
+    <published>2017-09-13T13:06:47.000Z</published>
+    <updated>2017-09-13T14:20:55.507Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="文件目录管理"><a href="#文件目录管理" class="headerlink" title="文件目录管理"></a>文件目录管理</h1><p>1.pwd  当前工作目录</p>
+<p>2.cd  切换工作目录  cd..返回上一级目录</p>
+<p>3.ls 显示目标工作目录列表  -l 列出当前目录详细文件信息  -a显示隐藏文件 -lh人性化展示文件列表<br>4.vim  .test创建一个隐藏文件   i 插入内容    保存文件 esc+shift+：    然后wq+enter</p>
+<p>5.cat   查看文件内容</p>
+<p>6.more 慢慢查看文件内容</p>
+<p>7.mkdir  创建目录</p>
+<p>8.mv(选项)(参数)     对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。</p>
+<p>9.mkdir  -p   cn/gansu/beijing/sjdjs/sds  递归创建目录</p>
+<p>10.tree cn  显示cn目录树结构</p>
+<p>11.popd   用于删除目录栈中的记录；如果popd命令不加任何参数，则会先删除目录栈最上面的记录，然后切换到删除过后的目录栈中的最上面的目录。</p>
+<p>12.install   的作用是安装或升级软件或备份数据，它的使用权限是所有用户。</p>
+<p>13.zip 可以用来解压缩文件，或者对文件进行打包操作。zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有“.zip”扩展名的压缩文件。</p>
+<p>14.rmdir  用来删除空目录。当目录不再被使用时，或者磁盘空间已到达使用限定值，就需要删除失去使用价值的目录.还可以用带有-r选项的rm命令递归删除一个目录中的所有文件和该目录本身，但是这样做存在很大的危险性。</p>
+<p>15.rm  可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。对于链接文件，只是删除整个链接文件，而原有文件保持不变。</p>
+<p>16.dirs  显示当前目录栈中的所有记录（不带参数的dirs命令显示当前目录栈中的记录）。dirs始终显示当然目录, 再是堆栈中的内容；即使目录堆栈为空, dirs命令仍然只显示当然目录。</p>
+<p>17.cp   用来将一个或多个源文件或者目录复制到指定的目的文件或目录</p>
+<p>18.shutdown命令用来系统关机命令。</p>
+<p>19.reboot命令用来重新启动正在运行的Linux操作系统</p>
+<p>20.df 显示磁盘分区上的可使用的磁盘空间  -h<br>21.top 查看系统性能  q退出<br>22.<br>23.<br>24.<br>25.<br>26.<br>27.<br>28.<br>29.<br>30.<br>31.<br>32.<br>33.<br>34.<br>35.<br>36.<br>37.<br>38.<br>39.<br>40.<br>41.<br>42.<br>43.<br>44.<br>45.<br>46.<br>47.<br>48.<br>49.<br>50.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;文件目录管理&quot;&gt;&lt;a href=&quot;#文件目录管理&quot; class=&quot;headerlink&quot; title=&quot;文件目录管理&quot;&gt;&lt;/a&gt;文件目录管理&lt;/h1&gt;&lt;p&gt;1.pwd  当前工作目录&lt;/p&gt;
+&lt;p&gt;2.cd  切换工作目录  cd..返回上一级目录&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://pineapple1996.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://pineapple1996.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo+github搭建个人博客</title>
