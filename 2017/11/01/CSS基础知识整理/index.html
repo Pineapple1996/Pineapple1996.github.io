@@ -1,0 +1,1004 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css,html,javascript,jquery," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="蒋默然的实验室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="背景（backgroud）CSS 属性定义背景效果:background-color,background-image,codebackground-repeat,background-attachment,background-position 背景颜色颜色定义方式（三种）十六进制 - 如：”#ff0000”RGB - 如：”rgb(255,0,0)”颜色名称 - 如：”red” 背景图像相关1">
+<meta name="keywords" content="css,html,javascript,jquery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS基础知识整理">
+<meta property="og:url" content="https://pineapple1996.github.io/2017/11/01/CSS基础知识整理/index.html">
+<meta property="og:site_name" content="蒋默然的实验室">
+<meta property="og:description" content="背景（backgroud）CSS 属性定义背景效果:background-color,background-image,codebackground-repeat,background-attachment,background-position 背景颜色颜色定义方式（三种）十六进制 - 如：”#ff0000”RGB - 如：”rgb(255,0,0)”颜色名称 - 如：”red” 背景图像相关1">
+<meta property="og:image" content="https://i.imgur.com/Axy9GJ3.png">
+<meta property="og:updated_time" content="2017-11-02T12:50:17.649Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS基础知识整理">
+<meta name="twitter:description" content="背景（backgroud）CSS 属性定义背景效果:background-color,background-image,codebackground-repeat,background-attachment,background-position 背景颜色颜色定义方式（三种）十六进制 - 如：”#ff0000”RGB - 如：”rgb(255,0,0)”颜色名称 - 如：”red” 背景图像相关1">
+<meta name="twitter:image" content="https://i.imgur.com/Axy9GJ3.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'X6L3JKLAON',
+      apiKey: 'f7a1bcb03fa1270db55aacbd468d8eaf',
+      indexName: 'test',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://pineapple1996.github.io/2017/11/01/CSS基础知识整理/"/>
+
+
+
+
+
+  <title>CSS基础知识整理 | 蒋默然的实验室</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?725c80f69b7eba82debc73ce34219b8c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蒋默然的实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://pineapple1996.github.io/2017/11/01/CSS基础知识整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dave Jiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蒋默然的实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS基础知识整理</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T21:22:37+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/01/CSS基础知识整理/" class="leancloud_visitors" data-flag-title="CSS基础知识整理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="背景（backgroud）"><a href="#背景（backgroud）" class="headerlink" title="背景（backgroud）"></a>背景（backgroud）</h1><p>CSS 属性定义背景效果:<br><code>background-color</code>,<br><code>background-image</code>,<br><code>codebackground-repeat</code>,<br><code>background-attachment</code>,<br><code>background-position</code></p>
+<h2 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h2><p>颜色定义方式（三种）<br>十六进制 - 如：”#ff0000”<br>RGB - 如：”rgb(255,0,0)”<br>颜色名称 - 如：”red”</p>
+<h2 id="背景图像相关"><a href="#背景图像相关" class="headerlink" title="背景图像相关"></a>背景图像相关</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">    background-image: url("1.jpg");  &lt;!--把图像设为背景--&gt;</div><div class="line">    background-repeat: no-repeat;   &lt;!--repeate-x,repeate-y --&gt;</div><div class="line">    background-position: right top;   &lt;!--背景图像起始位置--&gt;</div><div class="line">    background-attachment: fixed;    &lt;!--固定背景图像--&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="文本格式（text）"><a href="#文本格式（text）" class="headerlink" title="文本格式（text）"></a>文本格式（text）</h1><h2 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">h1&#123;color:#fff;&#125;</div><div class="line">body &#123;color:red;&#125;</div></pre></td></tr></table></figure>
+<h2 id="文本对齐方式"><a href="#文本对齐方式" class="headerlink" title="文本对齐方式"></a>文本对齐方式</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1&#123;text-align:cnter;&#125;</div><div class="line">p.date &#123;text-align:right;&#125;</div><div class="line">p.main &#123;text-align:jistify;&#125;</div></pre></td></tr></table></figure>
+<h2 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a &#123;text-decoretion:none;&#125;</div><div class="line">h1 &#123;text-decoration:overline;&#125;</div><div class="line">h2 &#123;text-decoration:line-through;&#125;</div><div class="line">h3 &#123;text-decoration:underline;&#125;</div></pre></td></tr></table></figure>
+<h2 id="文本转换"><a href="#文本转换" class="headerlink" title="文本转换"></a>文本转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">p&#123;</div><div class="line">    text-transform: capitalize;</div><div class="line">    text-transform: lowercase;</div><div class="line">    text-transform: uppercase;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!--第一行文本缩进--&gt;</div><div class="line">p&#123;text-indent:15px;&#125;</div></pre></td></tr></table></figure>
+<h2 id="其他文本样式"><a href="#其他文本样式" class="headerlink" title="其他文本样式"></a>其他文本样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">p&#123;</div><div class="line">    letter-spacing: 2px;  &lt;!--字母间距--&gt;</div><div class="line">    word-spacing: 2px;  &lt;!--单词间距--&gt;</div><div class="line">    line-height: 200%;  &lt;!--行高--&gt;</div><div class="line">    text-shadow: 2px 2px aqua; &lt;!--文字阴影--&gt;</div><div class="line">&#125;</div><div class="line">img.top &#123;vertical-align:text-top;&#125; &lt;!--文字对齐图像位置--&gt;</div><div class="line">img.bottom &#123;vertical-align:text-bottom;&#125;</div><div class="line">p</div><div class="line">&#123;</div><div class="line">    white-space：nowrap； &lt;!--文本不换行--&gt;</div><div class="line">&#125;</div><div class="line">div.ex1 &#123;direction:rtl;&#125;  &lt;!--文字方向--&gt;</div></pre></td></tr></table></figure>
+<h1 id="字体（font）"><a href="#字体（font）" class="headerlink" title="字体（font）"></a>字体（font）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!--font-family--&gt;</div><div class="line">p.sarif &#123;font-family:&quot;Times New Roman&quot;,Times,serif;&#125;</div><div class="line">p.sansserif&#123;font-family:Arial,Helvetica,sans-serif;&#125;</div><div class="line"></div><div class="line">&lt;!--font-style--&gt;</div><div class="line">p.normal &#123;font-style:normal;&#125;</div><div class="line">p.italic &#123;font-style:italic;]</div><div class="line">p.oblique &#123;font-style:oblique;]</div><div class="line"></div><div class="line">&lt;!--font-variant字体变异--&gt;</div><div class="line">p.normal &#123;font-varaint:normal;&#125;</div><div class="line">p.small&#123;font-variant:samll-caps;&#125;</div><div class="line"></div><div class="line">&lt;!--font-weight粗细--&gt;</div><div class="line">p.normal&#123;font-weight:normal;&#125;</div><div class="line">p.light&#123;font-weight:light;&#125;</div><div class="line">p.thick&#123;font-weight:thick;&#125;</div><div class="line">p.thicker &#123;font-weight:900;&#125;</div><div class="line">&lt;!--合并设置--&gt;</div><div class="line">p.ex2</div><div class="line">&#123;</div><div class="line">	font:italic bold 12px/30px Georgia,serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="链接样式-link"><a href="#链接样式-link" class="headerlink" title="链接样式(link)"></a>链接样式(link)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">a:link &#123;color:#000000;&#125;      /* 未访问链接*/</div><div class="line">a:visited &#123;color:#00FF00;&#125;  /* 已访问链接 */</div><div class="line">a:hover &#123;color:#FF00FF;&#125;  /* 鼠标移动到链接上 */</div><div class="line">a:active &#123;color:#0000FF;&#125;  /* 鼠标点击时 */</div><div class="line">decoration</div><div class="line">a:link &#123;text-decoration:none;&#125;    /* unvisited link */</div><div class="line">a:visited &#123;text-decoration:none;&#125; /* visited link */</div><div class="line">a:hover &#123;text-decoration:underline;&#125;   /* mouse over link */</div><div class="line">a:active &#123;text-decoration:underline;&#125;  /* selected link */</div><div class="line">backgoroud-color</div><div class="line">a:link &#123;background-color:#B2FF99;&#125;    /* 未访问链接 */</div><div class="line">a:visited &#123;background-color:#FFFF85;&#125; /* 已访问链接 */</div><div class="line">a:hover &#123;background-color:#FF704D;&#125;   /* 鼠标移动到链接上 */</div><div class="line">a:active &#123;background-color:#FF704D;&#125;  /* 鼠标点击时 */</div><div class="line">&lt;!--访问改变样式--&gt;</div><div class="line">a.one:link &#123;color:#ff0000;&#125;</div><div class="line">a.one:visited &#123;color:#0000ff;&#125;  /*改变字体颜色*/</div><div class="line">a.one:hover &#123;color:#ffcc00;&#125;</div><div class="line"></div><div class="line">a.two:link &#123;color:#ff0000;&#125;</div><div class="line">a.two:visited &#123;color:#0000ff;&#125;   /*鼠标放上去改变字体大小*/</div><div class="line">a.two:hover &#123;font-size:150%;&#125;</div><div class="line"></div><div class="line">a.three:link &#123;color:#ff0000;&#125;</div><div class="line">a.three:visited &#123;color:#0000ff;&#125;	/*改变背景颜色*/</div><div class="line">a.three:hover &#123;background:#66ff66;&#125;</div><div class="line"></div><div class="line">a.four:link &#123;color:#ff0000;&#125;</div><div class="line">a.four:visited &#123;color:#0000ff;&#125;   /*鼠标放上去改变字体类型*/</div><div class="line">a.four:hover &#123;font-family:monospace;&#125;</div><div class="line"></div><div class="line">a.five:link &#123;color:#ff0000;text-decoration:none;&#125;</div><div class="line">a.five:visited &#123;color:#0000ff;text-decoration:none;&#125;  /*加下划线，改变文字修饰*/</div><div class="line">a.five:hover &#123;text-decoration:underline;&#125;</div></pre></td></tr></table></figure>
+<h1 id="练习-practice"><a href="#练习-practice" class="headerlink" title="练习(practice)"></a>练习(practice)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;link&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        a:link,a:visited&#123;</div><div class="line">            background-color: #3b40ff;</div><div class="line">            color: #ffffff;</div><div class="line">            width: 150px;</div><div class="line">            text-decoration: none;</div><div class="line">            display: block;</div><div class="line">            text-align: center;</div><div class="line">            padding: 10px;</div><div class="line">            font-weight: bold ;</div><div class="line">            border-radius: 10px;</div><div class="line">        &#125;</div><div class="line">        a:hover&#123;</div><div class="line">            background-color: #1E7EE2;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;a href=&quot;http://baidu.com&quot; target=&quot;_blank&quot;&gt;百度&lt;/a&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h1 id="列表样式-list"><a href="#列表样式-list" class="headerlink" title="列表样式(list)"></a>列表样式(list)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!--list-style-type不同列表项标记--&gt;</div><div class="line">ul&#123;list-style-type:circle;&#125;</div><div class="line">ul.b &#123;list-style-type:disc;&#125;  </div><div class="line">ul.c &#123;list-style-type:square;&#125;</div><div class="line"></div><div class="line">ol.d &#123;list-style-type:armenian;&#125;</div><div class="line">ol.e &#123;list-style-type:cjk-ideographic;&#125;  </div><div class="line">ol.f &#123;list-style-type:decimal;&#125;</div><div class="line">....</div><div class="line">&lt;!--list-style-image设置作为列表项标记的图像--&gt;</div><div class="line">ul </div><div class="line">&#123;</div><div class="line">	list-style-image:url(&apos;sqpurple.gif&apos;);</div><div class="line">&#125;</div><div class="line">&lt;!--在一个声明中的所有列表属性--&gt;</div><div class="line">ul </div><div class="line">&#123;</div><div class="line">	list-style:square url(&quot;sqpurple.gif&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="表格样式-tb"><a href="#表格样式-tb" class="headerlink" title="表格样式(tb)"></a>表格样式(tb)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">/*指定一个表的Th，TD元素和黑色边框*/</div><div class="line">table,th,td</div><div class="line">&#123;</div><div class="line">	border:1px solid black;</div><div class="line">&#125;</div><div class="line">/*折叠边框（单边框）*/</div><div class="line">table&#123;border-collapse:collapse;&#125;</div><div class="line">/*设置宽和高*/</div><div class="line">table &#123;</div><div class="line">	width:100%;</div><div class="line">&#125;</div><div class="line">th &#123;</div><div class="line">	height:50px;</div><div class="line">&#125;</div><div class="line">/*设置文本对齐方式*/</div><div class="line">td&#123;</div><div class="line">	text-align:center;	</div><div class="line">&#125;</div><div class="line">th&#123;</div><div class="line">	vartical-align:bottom; /*垂直对齐*/</div><div class="line">&#125;</div><div class="line">/* 表格边框颜色，和th元素的文本和背景颜色*/</div><div class="line">table, td, th</div><div class="line">&#123;</div><div class="line">border:1px solid green;</div><div class="line">&#125;</div><div class="line">th</div><div class="line">&#123;</div><div class="line">background-color:green;</div><div class="line">color:white;</div><div class="line">&#125;</div><div class="line">/*表格名的位置*/</div><div class="line">caption&#123;</div><div class="line">	caption-side:bottom;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><p><img src="https://i.imgur.com/Axy9GJ3.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">div.ex</div><div class="line">&#123;</div><div class="line">width:220px;</div><div class="line">padding:10px;</div><div class="line">border:5px solid gray;</div><div class="line">margin:0px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="Dave Jiang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Dave Jiang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/jquery/" rel="tag"># jquery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/30/html标签集/" rel="next" title="html标签集">
+                <i class="fa fa-chevron-left"></i> html标签集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59687a64ba62bfc7" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Dave Jiang" />
+          <p class="site-author-name" itemprop="name">Dave Jiang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Pineapple1996" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2959765594/" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://sighttp.qq.com/msgrd?v=3&uin=1162523751&site=&menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://example.com/" title="隔壁老王" target="_blank">隔壁老王</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景（backgroud）"><span class="nav-number">1.</span> <span class="nav-text">背景（backgroud）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景颜色"><span class="nav-number">1.1.</span> <span class="nav-text">背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图像相关"><span class="nav-number">1.2.</span> <span class="nav-text">背景图像相关</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文本格式（text）"><span class="nav-number">2.</span> <span class="nav-text">文本格式（text）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本颜色"><span class="nav-number">2.1.</span> <span class="nav-text">文本颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本对齐方式"><span class="nav-number">2.2.</span> <span class="nav-text">文本对齐方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本修饰"><span class="nav-number">2.3.</span> <span class="nav-text">文本修饰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本转换"><span class="nav-number">2.4.</span> <span class="nav-text">文本转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本缩进"><span class="nav-number">2.5.</span> <span class="nav-text">文本缩进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他文本样式"><span class="nav-number">2.6.</span> <span class="nav-text">其他文本样式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字体（font）"><span class="nav-number">3.</span> <span class="nav-text">字体（font）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接样式-link"><span class="nav-number">4.</span> <span class="nav-text">链接样式(link)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习-practice"><span class="nav-number">5.</span> <span class="nav-text">练习(practice)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表样式-list"><span class="nav-number">6.</span> <span class="nav-text">列表样式(list)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表格样式-tb"><span class="nav-number">7.</span> <span class="nav-text">表格样式(tb)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#盒子模型"><span class="nav-number">8.</span> <span class="nav-text">盒子模型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dave Jiang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2138720"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Uoe8yWMor0XmNSvxT4IolRKx-gzGzoHsz", "RT3caTssnnhVpXwfdRIXiB9w");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
