@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pineapple1996.github.io/"/>
-  <updated>2017-12-02T07:42:08.765Z</updated>
+  <updated>2017-12-02T14:01:44.345Z</updated>
   <id>https://pineapple1996.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://pineapple1996.github.io/2017/11/30/%E7%8E%A9%E8%BD%ACgit%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/"/>
     <id>https://pineapple1996.github.io/2017/11/30/玩转git简明教程/</id>
     <published>2017-11-30T08:29:27.000Z</published>
-    <updated>2017-12-02T07:42:08.765Z</updated>
+    <updated>2017-12-02T14:01:44.345Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么是git？"><a href="#什么是git？" class="headerlink" title="什么是git？"></a>什么是git？</h1><p>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</p>
 <p>简单来讲，就是你保存管理代码的地方。<br>你可以把git想象成一个仓库，而你是一名雕刻师，你要完成一个产品，需要经历一个开发过程。你可能每天完成作品一部分，当天下班的时候，你就把你还未完成的作品放在仓库里，第二天继续。这样不断循环，直到你完成这个作品为止。这个过程中还允许你的伙伴来提出他们的改进意见，帮助你完成你的作品，当然你也可以不接受他们的意见。</p>
@@ -33,15 +33,25 @@
 <h1 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h1><p>我们现在在刚才的文件夹下面创建一个文件README.txt，里面的内容就随便你咯<br>一定要放到gitlearning目录下（子目录也行），因为这是一个Git仓库，放到其他地方Git再厉害也找不到这个文件。<br>接下来我们将一个文件放到Git仓库只需要两步。</p>
 <p>☞第一步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add README.txt</div></pre></td></tr></table></figure></p>
 <p>执行上面的命令，没有任何显示，这就对了，Unix的哲学是“没有消息就是好消息”，说明添加成功。</p>
-<p>☞第二步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">"wrote a readme file"</span></div><div class="line">[master (root-commit) cb926e7] wrote a readme file</div><div class="line"> 1 file changed, 2 insertions(+)</div><div class="line"> create mode 100644 readme.txt</div></pre></td></tr></table></figure></p>
+<p>☞第二步：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">'wrote a readme file'</span></div><div class="line">[master (root-commit) fbe4848] wrote a readme file</div><div class="line"> 1 file changed, 1 insertion(+)</div><div class="line"> create mode 100644 README.txt</div></pre></td></tr></table></figure></p>
 <p>简单解释一下git commit命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。</p>
+<p>命令总结：git init\git add\git commit -m ‘注释’</p>
 <h1 id="git-的基本操作"><a href="#git-的基本操作" class="headerlink" title="git 的基本操作"></a>git 的基本操作</h1><p>git status 以查看在你上次提交之后是否有修改。<br>我演示该命令的时候加了 -s 参数，以获得简短的结果输出。如果没加该参数会详细输出内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Your branch is up-to-date with <span class="string">'origin/master'</span>.</div><div class="line">nothing to commit, working tree clean</div></pre></td></tr></table></figure></p>
 <p>虽然Git告诉我们readme.txt被修改了，但如果能看看具体修改了什么内容，自然是很好的。如果一段时间之后，你已经记不清上次怎么修改的readme.txt，所以，需要用git diff这个命令看看：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff readme.txt </div><div class="line">diff --git a/readme.txt b/readme.txt</div><div class="line">index 46d49bf..9247db6 100644</div><div class="line">--- a/readme.txt</div><div class="line">+++ b/readme.txt</div><div class="line">@@ -1,2 +1,2 @@</div><div class="line">-Git is a version control system.</div><div class="line">+Git is a distributed version control system.</div><div class="line"> Git is free software.</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>git diff的一些用法</p>
 </blockquote>
 <p>●尚未缓存的改动：<code>git diff</code><br>●查看已缓存的改动： <code>git diff –cached</code><br>●查看已缓存的与未缓存的所有改动：<code>git diff HEAD</code><br>●显示摘要而非整个 <code>diff：git diff –stat</code></p>
-<p>接下来。我们再向</p>
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><p>如上，我们已经学会了修改文件，现在我继续对readme.txt文件进行修改，再增加一行</p>
+<p>　　内容为33333333333333.继续执行命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">'add 333333'</span></div><div class="line">[master 32f9f9a] add 333333</div><div class="line"> 1 file changed, 1 insertion(+), 1 deletion(-)</div></pre></td></tr></table></figure></p>
+<p>现在我们可以通过<code>git log</code>命令对我们的修改记录查询<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span></div><div class="line">commit 32f9f9af48ab0fcc76e672d48667b0638d94ff35 (HEAD -&gt; master)</div><div class="line">Author: Pineapple1996 &lt;1162523751@qq.com&gt;</div><div class="line">Date:   Sat Dec 2 21:10:36 2017 +0800</div><div class="line"></div><div class="line">    add 333333</div><div class="line"></div><div class="line">commit fbe48482c51eb75c2ac5ce24d683bbc3de444af8</div><div class="line">Author: Pineapple1996 &lt;1162523751@qq.com&gt;</div><div class="line">Date:   Sat Dec 2 21:08:01 2017 +0800</div><div class="line"></div><div class="line">    wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>git log命令显示从最近到最远的显示日志，我们可以看到最近2次提交，最近的一次是,增加内容为333333.如果嫌上面显示的信息太多的话，我们可以使用命令<code>git log –pretty=oneline</code> 演示如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span> --pretty=oneline</div><div class="line">32f9f9af48ab0fcc76e672d48667b0638d94ff35 (HEAD -&gt; master) add 333333</div><div class="line">fbe48482c51eb75c2ac5ce24d683bbc3de444af8 wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>现在我想使用版本回退操作，我想把当前的版本回退到上一个版本，要使用什么命令呢？可以使用如下2种命令，第一种是：<code>git reset  –hard HEAD^</code> 那么如果要回退到上上个版本只需把HEAD^ 改成 HEAD^^ 以此类推。那如果要回退到前100个版本的话，使用上面的方法肯定不方便，我们可以使用下面的简便命令操作：<code>git reset  –hard HEAD~100</code> 即可。未回退之前的readme.txt内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div><div class="line">HEAD is now at fbe4848 wrote a readme file</div></pre></td></tr></table></figure></p>
+<p><code>git reset  –hard</code> 版本号 ，但是现在的问题假如我已经关掉过一次命令行或者333内容的版本号我并不知道呢？要如何知道增加3333内容的版本号呢？可以通过如下命令即可获取到版本号：<code>git reflog</code> 演示如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">fbe4848 (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to HEAD^</div><div class="line">32f9f9a HEAD@&#123;1&#125;: reset: moving to HEAD</div><div class="line">32f9f9a HEAD@&#123;2&#125;: reset: moving to HEAD</div><div class="line">32f9f9a HEAD@&#123;3&#125;: commit: add 333333</div><div class="line">fbe4848 (HEAD -&gt; master) HEAD@&#123;4&#125;: commit (initial): wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>通过上面的显示我们可以知道，增加内容3333的版本号是 32f9f9a.我们现在可以命令</p>
+<p><code>git reset –hard 32f9f9a</code>来恢复了。演示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard 32f9f9a</div><div class="line">HEAD is now at 32f9f9a add 333333</div></pre></td></tr></table></figure></p>
+<p>接下来,我们来看命令 <code>git checkout –readme.txt</code> 意思，就是把readme.txt文件在工作区做的修改全部撤销，这里有2种情况，如下：</p>
+<p>1、readme.txt自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。<br>2、另外一种是readme.txt已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。<br><code>注意：</code>命令<code>git checkout — readme.txt</code> 中的 — 很重要，如果没有 — 的话，那么命令变成创建分支了。</p>
 ]]></content>
     
     <summary type="html">
@@ -96,9 +106,9 @@
     </summary>
     
     
-      <category term="html" scheme="https://pineapple1996.github.io/tags/html/"/>
-    
       <category term="css" scheme="https://pineapple1996.github.io/tags/css/"/>
+    
+      <category term="html" scheme="https://pineapple1996.github.io/tags/html/"/>
     
       <category term="javascript" scheme="https://pineapple1996.github.io/tags/javascript/"/>
     
@@ -136,9 +146,9 @@
       <category term="学习笔记" scheme="https://pineapple1996.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="html" scheme="https://pineapple1996.github.io/tags/html/"/>
-    
       <category term="css" scheme="https://pineapple1996.github.io/tags/css/"/>
+    
+      <category term="html" scheme="https://pineapple1996.github.io/tags/html/"/>
     
       <category term="javascript" scheme="https://pineapple1996.github.io/tags/javascript/"/>
     
@@ -293,9 +303,9 @@
       <category term="搭建博客" scheme="https://pineapple1996.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="npm" scheme="https://pineapple1996.github.io/tags/npm/"/>
-    
       <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
+    
+      <category term="npm" scheme="https://pineapple1996.github.io/tags/npm/"/>
     
   </entry>
   
