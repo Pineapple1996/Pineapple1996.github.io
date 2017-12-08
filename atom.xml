@@ -265,11 +265,11 @@
       <category term="搭建博客" scheme="https://pineapple1996.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
+      <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
+    
       <category term="git" scheme="https://pineapple1996.github.io/tags/git/"/>
     
       <category term="github" scheme="https://pineapple1996.github.io/tags/github/"/>
-    
-      <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
     
   </entry>
   
@@ -303,9 +303,9 @@
       <category term="搭建博客" scheme="https://pineapple1996.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
-    
       <category term="npm" scheme="https://pineapple1996.github.io/tags/npm/"/>
+    
+      <category term="hexo" scheme="https://pineapple1996.github.io/tags/hexo/"/>
     
   </entry>
   
